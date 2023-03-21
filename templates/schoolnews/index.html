@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>School News</title>
+        <style>
+            .reports {
+                background-color:yellow;
+
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 style="text-align: center">School News!</h1>
+
+        <div class="reports">
+            {% if page %}
+                <ul>
+                    {% for report in page %}
+                    <h1>{{report.title}}</h1>
+                    <p> by {{report.author}}, {{report.date}}</p>
+                    <p>{{report.text}}</p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </body>
+</html>
